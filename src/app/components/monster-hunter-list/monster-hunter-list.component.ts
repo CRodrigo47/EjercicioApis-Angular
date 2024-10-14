@@ -35,4 +35,8 @@ export class MonsterHunterListComponent {
     )
   }
 
+  arrayRareza(rareza: number){
+    return Array(rareza)
+  }
+
 }

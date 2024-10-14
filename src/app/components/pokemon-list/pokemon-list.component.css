@@ -1,0 +1,17 @@
+*{
+    background: linear-gradient(to right, #69b021, #00d4ff);
+    overflow: hidden;
+}
+.card-div{
+    background: none;
+}
+.card-div img{
+    background: none;
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+
+.card-div:hover img{
+    transform: scale(1.05);
+    transition: 0.5s;
+}

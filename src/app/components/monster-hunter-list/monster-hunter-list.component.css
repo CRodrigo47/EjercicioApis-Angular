@@ -1,0 +1,8 @@
+.main-div img{
+    transition: 0.5s;
+}
+.main-div:hover img{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
