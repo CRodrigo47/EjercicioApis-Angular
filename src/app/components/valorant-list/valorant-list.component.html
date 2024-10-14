@@ -1,0 +1,24 @@
+@defer (when apiData) {
+<div class="container-fluid bg-dark p-5">
+  <div class="row justify-content-center px-5">
+    @for (agent of apiData; track $index) {
+    <div
+      class="col-12 col-md-4 col-l-3 col-xxl-2 p-3 text-center"
+    >
+      <img
+        [src]="agent.displayIcon"
+        class="img-fluid rounded-circle p-2 border border-danger border-3"
+        alt="Icono de {{ agent.displayName }}"
+      />
+      <img
+        [src]="agent.background"
+        class="img-fluid"
+        [alt]="agent.displayName"
+      />
+    </div>
+    }
+  </div>
+</div>
+} @placeholder (minimum 500ms){
+<h2 class="text-center text-bg-dark bg-dark">Loading...</h2>
+}

@@ -1,0 +1,10 @@
+img.rounded-circle{
+    transition-duration: 0.5s;
+}
+
+img.rounded-circle:hover{
+    cursor: pointer;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+    transition: 0.5s;
+}
+

@@ -1,0 +1,12 @@
+@defer (when apiData) {
+    <div class="row">
+       @for (char of apiData; track char.id) {
+           <div class="col-2">
+               <img [src]="char.img_url" class="img-fluid p-2 shadow-lg" alt="Icono de {{char.name}}">
+           </div>
+       }
+    </div>
+   } @placeholder (minimum 500ms){
+       <h2 class="text-center text-bg-dark bg-dark">Loading...</h2>
+   }
+   
