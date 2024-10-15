@@ -1,4 +1,4 @@
-*{
+.main-div{
     background: linear-gradient(to right, #69b021, #00d4ff);
     overflow: hidden;
 }
@@ -12,6 +12,7 @@
 }
 
 .card-div:hover img{
+    cursor: pointer;
     transform: scale(1.05);
     transition: 0.5s;
 }

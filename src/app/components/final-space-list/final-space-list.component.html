@@ -1,12 +1,26 @@
 @defer (when apiData) {
+<div class="row justify-content-center">
+  @for (char of apiData; track char.id) {
+  <div class="card m-3 bg-dark border" style="max-width: 540px">
     <div class="row">
-       @for (char of apiData; track char.id) {
-           <div class="col-2">
-               <img [src]="char.img_url" class="img-fluid p-2 shadow-lg" alt="Icono de {{char.name}}">
-           </div>
-       }
+      <div class="col-md-4">
+        <img
+          [src]="char.img_url"
+          class="img-fluid rounded-circle p-2 pt-3"
+          alt="{{ char.name }}"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title text-white border-bottom">{{ char.name }}</h4>
+          <h5 class="card-text text-white py-2">Species: {{ char.species }}</h5>
+          <h5 class="card-text text-white py-2">Origin: {{ char.origin }}</h5>
+        </div>
+      </div>
     </div>
-   } @placeholder (minimum 500ms){
-    <h2 class="text-center text-bg-dark bg-dark py-5">Loading...</h2>
-    }
-   
+  </div>
+  }
+</div>
+} @placeholder (minimum 500ms){
+<h2 class="text-center text-bg-dark bg-dark py-5">Loading...</h2>
+}

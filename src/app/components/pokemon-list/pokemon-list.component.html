@@ -1,5 +1,5 @@
 @defer (when apiData) {
-    <div class="row justify-content-center p-5">
+    <div class="row justify-content-center p-5 main-div">
        @for (card of apiData; track card.id) {
            <div class="col-6 col-md-4 col-lg-2 m-1 card-div">
                <img [src]="card.images.small" class="img-fluid p-2" alt="Icono de {{card.name}}">
@@ -7,6 +7,8 @@
        }
     </div>
    } @placeholder (minimum 500ms){
-    <h2 class="text-center text-bg-dark bg-dark py-5">Loading...</h2>
+    <div class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     }
    

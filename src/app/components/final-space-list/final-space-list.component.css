@@ -1,0 +1,11 @@
+
+
+div.card{
+    transition-duration: 0.3s;
+}
+
+div.card:hover{
+    cursor: pointer;
+    box-shadow: 0 0 15px 5px rgba(255, 229, 112, 1);
+    transition: 0.3s;
+}
