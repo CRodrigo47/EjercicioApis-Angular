@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MonsterHunterService } from '../../services/monster-hunter.service';
-import { MonsterHunterInterface, Weapons } from '../../common/monster-hunter-interface';
+import { MonsterHunterInterface} from '../../common/monster-hunter-interface';
 
 @Component({
   selector: 'app-monster-hunter-list',
@@ -11,7 +11,7 @@ import { MonsterHunterInterface, Weapons } from '../../common/monster-hunter-int
 })
 export class MonsterHunterListComponent {
   private monsterHunterService: MonsterHunterService = inject(MonsterHunterService)
-  apiData!: MonsterHunterInterface;
+  apiData: MonsterHunterInterface[] = [];
 
   constructor() {
       this.loadApi()

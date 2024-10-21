@@ -10,8 +10,8 @@ export class MonsterHunterService {
   private readonly URL = "https://mhw-db.com/weapons";
   private http: HttpClient = inject(HttpClient)
 
-  getCharacters(): Observable<MonsterHunterInterface>{
-    return this.http.get<MonsterHunterInterface>(this.URL);
+  getCharacters(): Observable<MonsterHunterInterface[]>{
+    return this.http.get<MonsterHunterInterface[]>(this.URL);
   }
 
   constructor() { }

@@ -1,8 +1,12 @@
-img.rounded-circle{
+#main-div{
+    background-size:cover;
+}
+
+img{
     transition-duration: 0.5s;
 }
 
-img.rounded-circle:hover{
+img:hover{
     cursor: pointer;
     box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
     transition: 0.5s;

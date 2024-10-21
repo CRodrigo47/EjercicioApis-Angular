@@ -1,6 +1,4 @@
-export type FinalSpaceInterface = Characters[]
-
-export interface Characters {
+export interface FinalSpaceInterface {
   id: number;
   name: string;
   status: string;

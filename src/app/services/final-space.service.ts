@@ -10,8 +10,8 @@ export class FinalSpaceService {
   private readonly URL = "https://finalspaceapi.com/api/v0/character/";
   private http: HttpClient = inject(HttpClient)
 
-  getCharacters(): Observable<FinalSpaceInterface>{
-    return this.http.get<FinalSpaceInterface>(this.URL);
+  getCharacters(): Observable<FinalSpaceInterface[]>{
+    return this.http.get<FinalSpaceInterface[]>(this.URL);
   }
 
 

@@ -1,6 +1,4 @@
-export type MonsterHunterInterface = Weapons[]
-
-export interface Weapons{
+export interface MonsterHunterInterface{
     id: number
     type: string
     rarity: number

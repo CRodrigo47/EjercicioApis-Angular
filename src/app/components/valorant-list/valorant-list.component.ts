@@ -11,6 +11,8 @@ import { NgStyle } from '@angular/common';
   styleUrl: './valorant-list.component.css'
 })
 export class ValorantListComponent {
+  hoverActive!: boolean;
+  backgroundLink!: string | undefined;
   private valorantService: ValorantService = inject(ValorantService)
   apiData: Daum[]=[];
 

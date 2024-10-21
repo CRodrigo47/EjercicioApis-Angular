@@ -11,7 +11,7 @@ import { FinalSpaceInterface } from '../../common/final-space-interface';
 })
 export class FinalSpaceListComponent {
   private finalSpaceService: FinalSpaceService = inject(FinalSpaceService)
-  apiData!: FinalSpaceInterface;
+  apiData: FinalSpaceInterface[] = [];
 
   constructor() {
       this.loadApi()
