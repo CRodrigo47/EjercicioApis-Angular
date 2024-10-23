@@ -3,6 +3,11 @@ export interface ValorantInterface {
   data: Daum[];
 }
 
+export interface ValorantAgentInterface {
+  status: number;
+  data: Daum;
+}
+
 export interface Daum {
   uuid: string;
   displayName: string;

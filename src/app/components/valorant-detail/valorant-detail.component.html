@@ -1,0 +1,41 @@
+@defer (when character) {
+<div class="container-fluid justify-content-center">
+    <div class="text-white mt-2">
+        <h1 class="text-center border">
+        {{ character.displayName }}
+      </h1>
+      <h2 class="text-center border">
+        {{character.role?.displayName}}
+        <img src="{{character.role?.displayIcon}}" alt="character.role?.displayName" class="img-fluid pb-1" style="height: 30px; width: auto;">
+    </h2>
+    </div>
+  <div
+    class="row"
+    [ngStyle]="{
+      background:
+        'linear-gradient(rgba(33, 37, 41,0.7), rgba(33, 37, 41,0.7)), url(' +
+        character.background +
+        ')',
+      'background-size': 'contain',
+      'background-repeat': 'space'
+    }"
+  >
+    <div class="col-12 col-md-6">
+      <img src="{{ character.fullPortrait }}" alt="" class="img-fluid" />
+    </div>
+    <div class="col-12 col-md-4 justify-content-center border my-5 text-white">
+    @for (ability of character.abilities; track $index) {
+        <h1 class="d-flex justify-content-center text-white py-2">{{ability.displayName}}</h1>
+        <div class="text-center border d-flex px-3 align-items-center">
+            <img src="{{ability.displayIcon}}" alt="ability.displayName" class="img-fluid pb-1" style="height: 70px; width: auto;">
+            <p class="pt-2 ps-2">{{ability.description}}</p>
+        </div>
+    }
+    </div>
+  </div>
+</div>
+
+}@placeholder (minimum 500ms) {
+<h2 class="text-center text-primary">Loading ...</h2>
+
+}

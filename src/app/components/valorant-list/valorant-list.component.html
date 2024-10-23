@@ -15,7 +15,7 @@
 >
   <div class="row justify-content-center px-5">
     @for (agent of apiData; track $index) {
-    <div class="col-12 col-md-4 col-l-3 col-xxl-2 p-3 text-center">
+    <div class="col-12 col-md-4 col-l-3 col-xxl-2 p-3 text-center" [routerLink]="'/valorant/' + agent.uuid">
       <img
         [src]="agent.displayIcon"
         class="img-fluid rounded-circle p-2 border border-danger border-3"

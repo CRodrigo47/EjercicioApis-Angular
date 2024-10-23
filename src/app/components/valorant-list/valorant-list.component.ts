@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { ValorantService } from '../../services/valorant.service';
 import { Daum, ValorantInterface } from '../../common/valorant-interface';
 import { NgStyle } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-valorant-list',
   standalone: true,
-  imports: [NgStyle],
+  imports: [NgStyle, RouterLink],
   templateUrl: './valorant-list.component.html',
   styleUrl: './valorant-list.component.css'
 })
