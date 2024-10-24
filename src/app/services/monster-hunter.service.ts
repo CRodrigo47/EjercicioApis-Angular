@@ -14,5 +14,9 @@ export class MonsterHunterService {
     return this.http.get<MonsterHunterInterface[]>(this.URL);
   }
 
+  getCharacter(id: number): Observable<MonsterHunterInterface>{
+    return this.http.get<MonsterHunterInterface>(this.URL + '/' + id)
+  }
+
   constructor() { }
 }

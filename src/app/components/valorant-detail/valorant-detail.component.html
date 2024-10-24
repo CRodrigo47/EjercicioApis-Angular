@@ -1,10 +1,10 @@
 @defer (when character) {
 <div class="container-fluid justify-content-center">
     <div class="text-white mt-2">
-        <h1 class="text-center border">
+        <h1 class="text-center">
         {{ character.displayName }}
       </h1>
-      <h2 class="text-center border">
+      <h2 class="text-center">
         {{character.role?.displayName}}
         <img src="{{character.role?.displayIcon}}" alt="character.role?.displayName" class="img-fluid pb-1" style="height: 30px; width: auto;">
     </h2>
@@ -23,13 +23,21 @@
     <div class="col-12 col-md-6">
       <img src="{{ character.fullPortrait }}" alt="" class="img-fluid" />
     </div>
-    <div class="col-12 col-md-4 justify-content-center border my-5 text-white">
+    <div class="col-12 col-md-4 justify-content-center border rounded-3 border-danger my-5 text-white" [ngStyle]="{background:'rgba(0, 0, 0, 0.4)'}">
     @for (ability of character.abilities; track $index) {
+      @if (ability.displayIcon!=undefined) {
         <h1 class="d-flex justify-content-center text-white py-2">{{ability.displayName}}</h1>
-        <div class="text-center border d-flex px-3 align-items-center">
-            <img src="{{ability.displayIcon}}" alt="ability.displayName" class="img-fluid pb-1" style="height: 70px; width: auto;">
+        <div class="text-center border-bottom border-danger d-flex px-3 align-items-center">
+            <img src="{{ability.displayIcon}}" alt="{{ability.displayName}}" class="img-fluid p-2 border rounded-circle border-danger me-2" style="height: 70px; width: auto;">
             <p class="pt-2 ps-2">{{ability.description}}</p>
         </div>
+      }@else {
+        <h1 class="d-flex justify-content-center text-white py-2">{{ability.displayName}}</h1>
+        <div class="text-center border-bottom border-danger d-flex px-3 align-items-center">
+            <p class="pt-2 ps-2">{{ability.description}}</p>
+        </div>
+      }
+        
     }
     </div>
   </div>

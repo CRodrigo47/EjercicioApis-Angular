@@ -9,25 +9,15 @@
         [src]="weapon.assets?.image"
         class="img-fluid border-bottom m-2"
         alt="Icono de {{ weapon.name }}"
+        [routerLink]="'/mhw/' + weapon.id"
       />
       <h4 class="p-1">{{ weapon.name }}</h4>
-      <h5 class="p-1">Weapon type: {{weapon.type}}</h5>
-      <h5 class="p-1">Damage type: {{weapon.damageType}}</h5>
-      @if (weapon.elements.length!==0) {
-        <h5 class="d-flex justify-content-start p-1">Element:
-       @for (element of weapon.elements; track $index) {
-        <p class="px-1"> {{element.type}}</p>
-      } 
-    </h5>
-      }
-      <h5 class="p-1">DPS: {{weapon.attack.display}}</h5>
-      <span class="d-flex justify-content-end py-1">
-        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
-      </span>
     </div>
     }
   </div>
 </div>
-} @placeholder (minimum 500ms){
-<h2 class="text-center text-bg-dark bg-dark py-5">Loading...</h2>
-}
+}@placeholder (minimum 500ms) {
+  <h2 class="text-center text-primary">Loading ...</h2>
+  
+  }
+  

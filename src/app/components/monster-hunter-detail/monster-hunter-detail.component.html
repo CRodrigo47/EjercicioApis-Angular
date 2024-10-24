@@ -1,0 +1,65 @@
+@defer (when weapon) {
+    <div class="container my-5">
+        <div class="row text-white bg-gradient border rounded">
+        <div class="col-12 col-md-3 border-end">
+            <img src="{{weapon.assets?.image}}" alt="{{weapon.name}}" class="img-fluid" style="height: 30vh; width: auto">
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="d-flex p-2 border-bottom align-items-baseline justify-content-around">
+                <h1>{{weapon.name}}</h1>
+                <p>ID: {{weapon.id}}</p>
+            </div>
+            <div class="d-flex p-3 align-items-baseline justify-content-around">
+                <h2>{{empezarMayuscula(weapon.type)}}</h2>
+                <h2>{{weapon.attack.display}} DPS</h2>
+                @if (weapon.damageType!=undefined) {
+                    <h2>{{empezarMayuscula(weapon.damageType)}}</h2>
+                }
+            </div>
+            <div class="d-flex p-3 align-items-baseline justify-content-around">
+                @for (element of weapon.elements; track $index) {
+                        <h3>Element type: {{empezarMayuscula(element.type)}}</h3>
+                        <h3>Elemental Damage: {{element.damage}}</h3>
+                }
+            </div>
+            <div class="d-flex border-top justify-content-center pt-2 pt-3">
+                @if (weapon.rarity<2) {
+                    <span class="badge text-bg-secondary">
+                        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
+                    </span>
+                }
+                @if (weapon.rarity>=2 && weapon.rarity<4) {
+                    <span class="badge text-bg-light">
+                        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
+                    </span>
+                }
+                @if (weapon.rarity>=4 && weapon.rarity<6) {
+                    <span class="badge text-bg-info">
+                        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
+                    </span>
+                }
+                @if (weapon.rarity===6) {
+                    <span class="badge text-bg-primary">
+                        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
+                    </span>
+                }
+                @if (weapon.rarity===7) {
+                    <span class="badge text-bg-warning">
+                        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
+                    </span>
+                }
+                @if (weapon.rarity===8) {
+                    <span class="badge text-bg-danger">
+                        @for (star of arrayRareza(weapon.rarity); track $index) { ★ }
+                    </span>
+                }
+            </div>
+        </div>
+    </div> 
+    </div>
+}@placeholder (minimum 500ms) {
+    <h2 class="text-center text-primary">Loading ...</h2>
+    
+    }
+    
+

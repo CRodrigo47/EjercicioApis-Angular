@@ -6,6 +6,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { FinalSpaceListComponent } from './components/final-space-list/final-space-list.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ValorantDetailComponent } from './components/valorant-detail/valorant-detail.component';
+import { MonsterHunterDetailComponent } from './components/monster-hunter-detail/monster-hunter-detail.component';
 
 export const routes: Routes = [
     {
@@ -28,6 +29,10 @@ export const routes: Routes = [
     {
         path: 'mhw',
         component: MonsterHunterListComponent
+    },
+    {
+        path: 'mhw/:id',
+        component: MonsterHunterDetailComponent
     },
     {
         path: 'pokemon',
