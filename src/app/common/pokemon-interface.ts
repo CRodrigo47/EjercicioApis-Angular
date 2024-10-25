@@ -5,6 +5,10 @@ export interface PokemonInterface {
     count: number
     totalCount: number
   }
+
+  export interface PokemonCardInterface{
+    data: Daum
+  }
   
   export interface Daum {
     id: string

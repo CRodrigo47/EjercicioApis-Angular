@@ -2,7 +2,7 @@
     <div class="row justify-content-center p-5 main-div">
        @for (card of apiData; track card.id) {
            <div class="col-6 col-md-4 col-lg-2 m-1 card-div">
-               <img [src]="card.images.small" class="img-fluid p-2" alt="Icono de {{card.name}}">
+               <img [src]="card.images.small" class="img-fluid p-2" alt="Icono de {{card.name}}" [routerLink]="'/pokemon/' + card.id">
            </div>
        }
     </div>

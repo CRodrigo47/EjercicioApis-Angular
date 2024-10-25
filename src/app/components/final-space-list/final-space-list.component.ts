@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FinalSpaceService } from '../../services/final-space.service';
 import { FinalSpaceInterface } from '../../common/final-space-interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-final-space-list',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './final-space-list.component.html',
   styleUrl: './final-space-list.component.css'
 })

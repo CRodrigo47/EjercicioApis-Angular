@@ -7,11 +7,15 @@ import { FinalSpaceInterface } from '../common/final-space-interface';
   providedIn: 'root'
 })
 export class FinalSpaceService {
-  private readonly URL = "https://finalspaceapi.com/api/v0/character/";
+  private readonly URL = "https://finalspaceapi.com/api/v0/character";
   private http: HttpClient = inject(HttpClient)
 
   getCharacters(): Observable<FinalSpaceInterface[]>{
     return this.http.get<FinalSpaceInterface[]>(this.URL);
+  }
+
+  getCharacter(id: number): Observable<FinalSpaceInterface>{
+    return this.http.get<FinalSpaceInterface>(this.URL + "/" + id)
   }
 
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PokemonInterface } from '../common/pokemon-interface';
+import { PokemonCardInterface, PokemonInterface } from '../common/pokemon-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,10 @@ export class PokemonService {
 
   getCharacters(): Observable<PokemonInterface>{
     return this.http.get<PokemonInterface>(this.URL);
+  }
+
+  getCard(id: number): Observable<PokemonCardInterface>{
+    return this.http.get<PokemonCardInterface>(this.URL + "/" + id);
   }
 
   constructor() { }

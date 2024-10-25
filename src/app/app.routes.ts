@@ -7,6 +7,8 @@ import { FinalSpaceListComponent } from './components/final-space-list/final-spa
 import { ErrorComponent } from './components/error/error.component';
 import { ValorantDetailComponent } from './components/valorant-detail/valorant-detail.component';
 import { MonsterHunterDetailComponent } from './components/monster-hunter-detail/monster-hunter-detail.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { FinalSpaceDetailComponent } from './components/final-space-detail/final-space-detail.component';
 
 export const routes: Routes = [
     {
@@ -39,8 +41,16 @@ export const routes: Routes = [
         component: PokemonListComponent
     },
     {
+        path: 'pokemon/:id',
+        component: PokemonDetailComponent
+    },
+    {
         path: 'finalSpace',
         component: FinalSpaceListComponent
+    },
+    {
+        path: 'finalSpace/:id',
+        component: FinalSpaceDetailComponent
     },
     {
         path: '**',
