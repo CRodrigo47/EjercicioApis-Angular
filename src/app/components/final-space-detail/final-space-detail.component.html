@@ -1,6 +1,6 @@
 @defer (when character) {
-    <div class="card shadow mt-5">
-      <div class="card-header bg-primary-subtle">
+    <div class="container card mt-5 bg-dark border-0">
+      <div class="card-header bg-warning-subtle">
         <div class="card-title text-center py-2 px-1">
           <div class="row justify-content-center">
             <div class="col-10">
@@ -9,31 +9,31 @@
           </div>
         </div>
       </div>
-      <div class="row py-4">
+      <div class="row py-4 text-bg-dark">
         <div class="col-md-4 text-center">
-          <img src="{{ character.img_url }}" alt="{{ character.name }}" />
+          <img src="{{ character.img_url }}" alt="{{ character.name }}" class="rounded border border-warning" />
         </div>
         <div class="col-md-4">
           <div class="card-body">
             <p class="card-text">
               <strong>Gender: </strong>
-              <span class="text-primary">{{ character.gender }}</span>
+              <span class="text-warning">{{ character.gender }}</span>
             </p>
             <p class="card-text">
               <strong>Status: </strong>
-              <span class="text-primary">{{ character.status }}</span>
+              <span class="text-warning">{{ character.status }}</span>
             </p>
             <p class="card-text">
               <strong>Species: </strong>
               @if (character.species !== '') {
-              <span class="text-primary">{{ character.species }}</span>
+              <span class="text-warning">{{ character.species }}</span>
               } @else {
-              <span class="text-primary">Common human</span>
+              <span class="text-warning">Common human</span>
               }
             </p>
             <p class="card-text">
               <strong>Origin: </strong>
-              <span class="text-primary">{{ character.origin }}</span>
+              <span class="text-warning">{{ character.origin }}</span>
             </p>
           </div>
         </div>
@@ -43,20 +43,20 @@
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button
-                    class="accordion-button"
+                    class="accordion-button bg-warning-subtle"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseAcc"
                     aria-expanded="false"
                     aria-controls="collapseAcc"
                   >
-                    Locations
+                    Skills
                   </button>
                 </h2>
                 <div
                   id="collapseAcc"
                   data-bs-parent="#accordionLoc"
-                  class="accordion-collapse collapse"
+                  class="accordion-collapse collapse bg-warning-subtle"
                 >
                   <div class="accordion-body overflow-y-scroll">
                     <ul>
@@ -70,6 +70,16 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="justify-content-center text-bg-dark text-center p-3">
+        @if (character.alias!==undefined) {
+          <p class="card-text">
+            <strong>Also known as... <br> </strong>
+            @for (name of character.alias; track $index) {
+                <span class="text-warning">{{ name }} <br></span>
+            }
+          </p>
+        }
       </div>
     </div>
      
