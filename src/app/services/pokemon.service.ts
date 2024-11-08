@@ -10,8 +10,8 @@ export class PokemonService {
   private readonly URL = 'https://api.pokemontcg.io/v2/cards'
   private http: HttpClient = inject(HttpClient)
 
-  getCharacters(): Observable<PokemonInterface>{
-    return this.http.get<PokemonInterface>(this.URL);
+  getCharacters(page: number): Observable<PokemonInterface>{
+    return this.http.get<PokemonInterface>(this.URL + '?page=' + page + '&pageSize=20');
   }
 
   getCard(id: number): Observable<PokemonCardInterface>{

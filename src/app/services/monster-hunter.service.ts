@@ -10,8 +10,10 @@ export class MonsterHunterService {
   private readonly URL = "https://mhw-db.com/weapons";
   private http: HttpClient = inject(HttpClient)
 
-  getCharacters(): Observable<MonsterHunterInterface[]>{
-    return this.http.get<MonsterHunterInterface[]>(this.URL);
+  getCharacters(page : number): Observable<MonsterHunterInterface[]>{
+    const max = (page * 20)
+    const min = (max - 19)
+    return this.http.get<MonsterHunterInterface[]>(this.URL + '?q={"id":{"$gte":' + min + ',"$lte":' + max + '}}');
   }
 
   getCharacter(id: number): Observable<MonsterHunterInterface>{

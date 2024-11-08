@@ -1,6 +1,22 @@
 @defer (when apiData) {
     <div class="row justify-content-center p-5 main-div">
-       @for (card of apiData; track card.id) {
+        <div class="col-md-12 my-2">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <ngb-pagination
+                  [collectionSize]="apiData.totalCount"
+                  [pageSize]="20"
+                  [(page)]="currentPage"
+                  (pageChange)="loadApi()"
+                  [maxSize]="10"
+                  [rotate]="true"
+                  [ellipses]="false"
+                  [boundaryLinks]="true"
+                ></ngb-pagination>
+              </div>
+            </div>
+          </div>
+       @for (card of apiData.data; track card.id) {
            <div class="col-6 col-md-4 col-lg-2 m-1 card-div">
                <img [src]="card.images.small" class="img-fluid p-2" alt="Icono de {{card.name}}" [routerLink]="'/pokemon/' + card.id">
            </div>

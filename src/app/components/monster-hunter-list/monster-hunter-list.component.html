@@ -1,6 +1,22 @@
 @defer (when apiData) {
 <div class="container-fluid bg-dark p-5">
-  <div class="row justify-content-center px-5">
+  <div class="row justify-content-center px-5 ">
+    <div class="col-md-12 my-2">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <ngb-pagination
+            [collectionSize]="1306"
+            [pageSize]="20"
+            [(page)]="currentPage"
+            (pageChange)="loadApi()"
+            [maxSize]="10"
+            [rotate]="true"
+            [ellipses]="false"
+            [boundaryLinks]="true"
+          ></ngb-pagination>
+        </div>
+      </div>
+    </div>
     @for (weapon of apiData; track weapon.id) {
     <div
       class="col-10 col-md-4 col-lg-2 border border-white rounded-3 m-3 text-bg-dark main-div"
@@ -17,7 +33,6 @@
   </div>
 </div>
 }@placeholder (minimum 500ms) {
-  <h2 class="text-center text-primary">Loading ...</h2>
-  
-  }
-  
+<h2 class="text-center text-primary">Loading ...</h2>
+
+}
